@@ -1,15 +1,16 @@
-let task_id = 0
+let taskId = 0
 
 function addNewTask(addNewTaskDescrip, addNewTaskPriority, thisList) {
 	event.preventDefault()
-	task_id += 1
+	taskId += 1
+	
 	let newTask = document.createElement("li")
-	newTask.dataset["id"] = `${task_id}`
+	newTask.dataset["id"] = `${taskId}`
 	newTask.className = "list-item"
-	newTask.innerHTML = `
-	<button data-id=${task_id} class="delete-item">x</button>
-	${addNewTaskDescrip.value}, ${addNewTaskPriority.value} 
-	`
+	newTask.innerHTML = 
+		`<button data-id=${taskId} class="delete-item">x</button>
+		${addNewTaskDescrip.value}, ${addNewTaskPriority.value} 
+		`
 	thisList.appendChild(newTask)
   
   //clear form
